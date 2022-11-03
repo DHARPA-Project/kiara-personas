@@ -2,7 +2,7 @@ from dash import html
 import dash_bootstrap_components as dbc
 
 workflow_creators = html.Div(children=[
-    html.P("Workflow creators are Kiara users who may or may not be comfortable with coding. They can access Kiara functionalities via the command-line interface, create pipelines with existing Kiara modules, and store processed data in the data registry."),
+    html.P("Modules users are Kiara users who may or may not be comfortable with coding. They can access Kiara functionalities via the command-line interface or the API, create pipelines with existing Kiara modules, and store processed data in the data registry."),
         html.Br(),
     html.H5("Tutorials:",className="mb-1"),
     html.Br(),
