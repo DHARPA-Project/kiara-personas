@@ -14,7 +14,7 @@ function _dx(){return(
 )}
 
 function _dy(){return(
-180
+120
 )}
 
 function _tree(d3,dx,dy){return(
@@ -29,7 +29,7 @@ function _graph(tree,d3,width,dx,treeLink,$0){return(
 function graph(root, {
   label = d => d.data.id, 
   highlight = () => false,
-  marginLeft = 40
+  marginLeft = 100
 } = {}) {
   root = tree(root);
 
@@ -156,8 +156,8 @@ function update(data) {
     })
           .join("rect")
             .attr("id", d => "rect-" + d.data.name.split(' ').join('_'))
-            .attr("x", d => -(114 + 2* xMargin))
-            .attr("width", d => 114 + 2 * xMargin)
+            .attr("x", d => -(124 + 2* xMargin))
+            .attr("width", d => 124 + 2 * xMargin)
             .attr("height", d => d.bbox.height + 3 * yMargin)
             //.attr("id", function(d){console.log(d)})
             .attr('transform', function(d) {
@@ -175,7 +175,7 @@ function _kiara(d3){return(
 d3.hierarchy({
   name: "Kiara Personas",
   children: [
-    {name: "Workflow Creators",
+    {name: "Modules users",
       children: [
         {name: "CLI"},
         {name: "Data registry"},
@@ -188,16 +188,24 @@ d3.hierarchy({
         {name: "Data registry"},
         {name: "Pipeline"},
         {name: "Plugin"},
+        {name: "Python API"},
       ]},
 
     {
-      name: "Interface Creators",
+      name: "Pipeline app creators",
       children: [
         {name: "CLI"},
         {name: "Data registry"},
         {name: "Pipeline"},
         {name: "Plugin"},
-        {name: "API"},
+        {name: "Python API"},
+      ]
+    },
+
+    {
+      name: "Front-end developers",
+      children: [
+        {name: "Rest API"},
         {name: "Workflow object"},
       ]
     }

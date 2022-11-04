@@ -9,7 +9,7 @@ external_stylesheets = [dbc.themes.FLATLY]
 app = Dash(__name__, external_stylesheets=external_stylesheets, use_pages=False, suppress_callback_exceptions=True, assets_ignore='.*.js')
 
 viz = html.Div(children=[
-        create_viz(500),
+        create_viz(600),
         ])
 
 app.layout = html.Div([
