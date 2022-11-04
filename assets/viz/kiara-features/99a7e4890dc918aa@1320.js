@@ -104,14 +104,17 @@ function graph(root, {
    
       if (d.depth == 2) {
          d3.selectAll(elClass)
-        .attr("fill", "lightblue")
+        .attr("fill", "rgb(9, 105, 218)")
       }
     
       if (d.depth == 1) {
-        const rectid = `${"#rect-"}${d.data.name.split(' ').join('_')}`
+        const a = d.data.name.split(' ').join('_')
+        const b = a.split('/').join('_')
+
+        const rectid = `${"#rect-"}${b}`
         
          d3.selectAll(rectid)
-          .style("fill", "lightblue")
+          .style("fill", "rgba(9, 105, 218, 0.7)")
         }
     
      
@@ -155,9 +158,14 @@ function update(data) {
       return d.depth == 1
     })
           .join("rect")
-            .attr("id", d => "rect-" + d.data.name.split(' ').join('_'))
-            .attr("x", d => -(124 + 2* xMargin))
-            .attr("width", d => 124 + 2 * xMargin)
+            .attr("id", function(d) {
+              const a = d.data.name.split(' ').join('_')
+              const b = a.split('/').join('_')
+              return "rect-" + b
+
+            } )
+            .attr("x", d => -(162 + 2* xMargin))
+            .attr("width", d => 162 + 2 * xMargin)
             .attr("height", d => d.bbox.height + 3 * yMargin)
             //.attr("id", function(d){console.log(d)})
             .attr('transform', function(d) {
@@ -175,14 +183,14 @@ function _kiara(d3){return(
 d3.hierarchy({
   name: "Kiara Personas",
   children: [
-    {name: "Modules users",
+    {name: "Modules/Pipelines Users",
       children: [
         {name: "CLI"},
         {name: "Data registry"},
         {name: "Pipeline"}
       ]},
     {
-      name: "Modules Creators",
+      name: "Modules/Pipelines Creators",
       children: [
         {name: "CLI"},
         {name: "Data registry"},
