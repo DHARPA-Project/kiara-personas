@@ -1,18 +1,35 @@
 from dash import html
 import dash_bootstrap_components as dbc
 
-workflow_creators = html.Div(children=[
-    html.P("Modules users are Kiara users who may or may not be comfortable with coding. They can access Kiara functionalities via the command-line interface or the API, create pipelines with existing Kiara modules, and store processed data in the data registry."),
+kiara = html.Div(children=[
+    html.P("Kiara is a data orchestration engine that uses a modular approach to let users re-use tried and tested data pipelines, as well as create new ones from existing building blocks."),
+    html.H5("Github Repo:",className="mb-1"),
+
+    dbc.ListGroup(
+    [
+        dbc.ListGroupItem('Kiara - https://github.com/DHARPA-Project/kiara', href="https://github.com/DHARPA-Project/kiara"),
+    ], flush=True
+    ),
+
+     dbc.CardImg(src="static/images/kiara.png", top=True),
+])
+
+modules_users = html.Div(children=[
+    html.P("Modules users are Kiara users who may not be comfortable with coding, but who are able to use the command line. They can access Kiara functionalities via the command-line interface, create pipelines with existing Kiara modules, and store processed data in the data registry."),
         html.Br(),
-    html.H5("Tutorials:",className="mb-1"),
+    html.H5("Tutorials",className="mb-1"),
     html.Br(),
 
     dbc.ListGroup(
     [
-        dbc.ListGroupItem('"Getting started with Kiara"', href="https://dharpa.org/kiara.documentation/latest/usage/getting_started/"),
-        dbc.ListGroupItem('"Assembling a pipeline"', href="https://dharpa.org/kiara.documentation/latest/extending_kiara/pipelines/assemble_pipelines/"),
+        dbc.ListGroupItem('"Getting started with Kiara": https://dharpa.org/kiara.documentation/latest/usage/getting_started/', href="https://dharpa.org/kiara.documentation/latest/usage/getting_started/"),
+        dbc.ListGroupItem('"Assembling a pipeline": https://dharpa.org/kiara.documentation/latest/extending_kiara/pipelines/assemble_pipelines/', href="https://dharpa.org/kiara.documentation/latest/extending_kiara/pipelines/assemble_pipelines/"),
     ], flush=True
     ),
+
+    html.Br(),
+
+    dbc.CardImg(src="static/images/modules_users.png", top=True),
 ])
 
 modules_creators = html.Div(children=[
@@ -23,25 +40,53 @@ modules_creators = html.Div(children=[
 
     dbc.ListGroup(
     [
-        dbc.ListGroupItem('"Writing your own kiara module"', href="https://dharpa.org/kiara.documentation/latest/extending_kiara/creating_modules/the_basics/#setting-up-development-environment"),
-        dbc.ListGroupItem('"Assembling a pipeline"', href="https://dharpa.org/kiara.documentation/latest/extending_kiara/pipelines/assemble_pipelines/"),
+        dbc.ListGroupItem('"Creating modules": https://dharpa.org/kiara.documentation/latest/extending_kiara/creating_modules/', href="https://dharpa.org/kiara.documentation/latest/extending_kiara/creating_modules/"),
+        dbc.ListGroupItem('"Assembling a pipeline": https://dharpa.org/kiara.documentation/latest/extending_kiara/pipelines/assemble_pipelines/', href="https://dharpa.org/kiara.documentation/latest/extending_kiara/pipelines/assemble_pipelines/"),
     ], flush=True
     ),
+
+    html.Br(),
+    dbc.CardImg(src="static/images/modules_creators.png", top=True),
 ])
 
-kiara = html.Div(children=[
-    html.P("Kiara is a data orchestration engine that uses a modular approach to let users re-use tried and tested data pipelines, as well as create new ones from existing building blocks."),
-    html.H5("Github Repo:",className="mb-1"),
+app_creators = html.Div(children=[
+    html.P("App creators are module creators who use low code front-end apps such as Streamlit or Dash. They can use Kiara as the pipeline execution tool for their projects via Kiara Python API."),
+        html.Br(),
+    html.H5("Documentation:",className="mb-1"),
+    html.Br(),
 
     dbc.ListGroup(
     [
-        dbc.ListGroupItem('Kiara', href="https://github.com/DHARPA-Project/kiara"),
+        dbc.ListGroupItem('"Kiara Python API": https://dharpa.org/kiara/latest/reference/kiara/interfaces/python_api/__init__/', href="https://dharpa.org/kiara/latest/reference/kiara/interfaces/python_api/__init__/"),
     ], flush=True
     ),
+
+    html.Br(),
+    dbc.CardImg(src="static/images/app_creators.png", top=True),
 ])
+
+fe_dev = html.Div(children=[
+    html.P("Front-End developers can request Kiara REST API and retrieve responses formatted in JSON. Additionally, the workflow API, currently under development, is a tool enabling them to explore the possibilities in terms of Kiara workflow sessions."),
+        html.Br(),
+    html.H5("Documentation:",className="mb-1"),
+    html.Br(),
+
+    dbc.ListGroup(
+    [
+        dbc.ListGroupItem('"Kiara Workflow Object": https://dharpa.org/kiara.documentation/latest/workflows/topic_modeling/', href="https://dharpa.org/kiara.documentation/latest/workflows/topic_modeling/"),
+    ], flush=True
+    ),
+
+    html.Br(),
+    dbc.CardImg(src="static/images/fe_dev.png", top=True),
+])
+
 
 texts_keys = {
     "Kiara": kiara,
-    "Workflow Creators": workflow_creators,
-    "Modules Creators": modules_creators,
+    "Kiara Personas": kiara,
+    "Modules Pipelines Users": modules_users,
+    "Modules Pipelines Creators": modules_creators,
+    "Pipeline-Apps Creators": app_creators,
+    "Front-End Developers": fe_dev,
 }

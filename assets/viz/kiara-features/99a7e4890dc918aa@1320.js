@@ -200,7 +200,7 @@ d3.hierarchy({
       ]},
 
     {
-      name: "Pipeline app creators",
+      name: "Pipeline-Apps Creators",
       children: [
         {name: "CLI"},
         {name: "Data registry"},
@@ -211,7 +211,7 @@ d3.hierarchy({
     },
 
     {
-      name: "Front-end developers",
+      name: "Front-End Developers",
       children: [
         {name: "Rest API"},
         {name: "Workflow object"},

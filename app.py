@@ -13,7 +13,7 @@ viz = html.Div(children=[
         ])
 
 app.layout = html.Div([
-    dbc.NavbarSimple(brand='Kiara users'),
+    dbc.NavbarSimple(brand='Kiara Personas'),
     html.Br(),
 	html.Div(children=[
     dbc.Row([
@@ -24,7 +24,7 @@ app.layout = html.Div([
         ])), width=6),
 
         dbc.Col(html.Div(children=[
-            dbc.Input(placeholder="Kiara", id='clicked-feat', readonly=True, size="sm",style={"width": "50%","display":"inline","margin-right":"1em","background-color":"white"}),
+            dbc.Input(placeholder="Kiara Personas", id='clicked-feat', readonly=True, size="sm",style={"width": "50%","display":"inline","margin-right":"1em","background-color":"white"}),
             html.Br(),
             html.Br(),
             html.Div(id='feat-content')
@@ -53,8 +53,10 @@ app.clientside_callback(
     Output('feat-content','children'),
     Input("clicked-page", "data"))
 def display_content(value):
-    content = texts_keys[value] or None
-    
+
+    val = value.replace("/", " ")
+    content = texts_keys[val] or None
+
     return content
 
 if __name__ == '__main__':
