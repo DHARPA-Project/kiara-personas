@@ -14,7 +14,7 @@ function _dx(){return(
 )}
 
 function _dy(){return(
-120
+160
 )}
 
 function _tree(d3,dx,dy){return(
@@ -29,7 +29,7 @@ function _graph(tree,d3,width,dx,treeLink,$0){return(
 function graph(root, {
   label = d => d.data.id, 
   highlight = () => false,
-  marginLeft = 100
+  marginLeft = 120
 } = {}) {
   root = tree(root);
 
@@ -48,7 +48,7 @@ function graph(root, {
   
   const g = svg.append("g")
       .attr("font-family", "Palanquin")
-      .attr("font-size", 14)
+      .attr("font-size", 15)
       .attr("transform", `translate(${marginLeft},${dx - x0})`);
     
   const link = g.append("g")
@@ -87,6 +87,11 @@ function graph(root, {
 
   node.append("text")
       .attr("fill", "black")
+      .attr("font-size", function (d) {
+        if (d.depth == 0) {
+          return 18
+        }
+      })
       .attr("class", function(d) {
         return d.data.name.split(' ').join('_')
       })
@@ -105,6 +110,7 @@ function graph(root, {
       if (d.depth == 2) {
          d3.selectAll(elClass)
         .attr("fill", "rgb(9, 105, 218)")
+        .attr("font-weight", "bold")
       }
     
       if (d.depth == 1) {
@@ -123,6 +129,7 @@ function graph(root, {
       
       d3.selectAll("text")
         .attr("fill", "black")
+        .attr("font-weight", "normal")
       
       d3.selectAll("rect")
         .style("fill", "lightgrey")
@@ -164,8 +171,8 @@ function update(data) {
               return "rect-" + b
 
             } )
-            .attr("x", d => -(162 + 2* xMargin))
-            .attr("width", d => 162 + 2 * xMargin)
+            .attr("x", d => -(172 + 2* xMargin))
+            .attr("width", d => 172 + 2 * xMargin)
             .attr("height", d => d.bbox.height + 3 * yMargin)
             //.attr("id", function(d){console.log(d)})
             .attr('transform', function(d) {
