@@ -68,7 +68,7 @@ app_creators = html.Div(children=[
 fe_dev = html.Div(children=[
     html.P("Front-End developers can request Kiara REST API and retrieve responses formatted in JSON. Additionally, the workflow API, currently under development, is a tool enabling them to explore the possibilities in terms of Kiara workflow sessions."),
         html.Br(),
-    html.H5("Documentation:",className="mb-1"),
+    html.H5("Example:",className="mb-1"),
     html.Br(),
 
     dbc.ListGroup(
@@ -156,6 +156,13 @@ workflow_object = html.Div(children=[
     dbc.CardImg(src="static/images/workflow_object.png", top=True),
 ])
 
+rest_api = html.Div(children=[
+    html.P("Kiara Python REST Api provides front-end developers with endpoints to retrieve data in JSON and Html."),
+    html.Br(),
+    html.Br(),
+    dbc.CardImg(src="static/images/api_lineage.png", top=True),
+])
+
 
 texts_keys = {
     "Kiara": kiara,
@@ -169,4 +176,5 @@ texts_keys = {
     "Pipeline": pipeline,
     "Plugin": plugin,
     "Python API": python_api,
+    "Rest API": rest_api
 }
