@@ -51,7 +51,7 @@ modules_creators = html.Div(children=[
 
 app_creators = html.Div(children=[
     html.P("App creators are module creators who use low code front-end apps such as Streamlit or Dash. They can use Kiara as the pipeline execution tool for their projects via Kiara Python API."),
-        html.Br(),
+    html.Br(),
     html.H5("Documentation:",className="mb-1"),
     html.Br(),
 
@@ -97,6 +97,24 @@ data_registry = html.Div(children=[
     dbc.CardImg(src="static/images/data_registry.png", top=True),
 ])
 
+pipeline = html.Div(children=[
+    html.P("Pipelines enable users to assemble module and to define some outputs as the input of the following module. The pipeline can be created via a yaml file."),
+    html.Br(),
+    html.H5("Example:",className="mb-1"),
+    html.Br(),
+    dbc.ListGroup(
+    [
+    dbc.ListGroupItem('"Kiara Python API": https://github.com/DHARPA-Project/kiara.examples/blob/main/examples/pipelines/topic_modeling/topic_modeling.yaml"'),
+    ], flush=True
+    ),
+    html.Br(),
+    html.Br(),
+    dbc.CardImg(src="static/images/pipeline_1.png", top=True),
+    html.Br(),
+    html.Br(),
+    dbc.CardImg(src="static/images/pipeline_2.png", top=True),
+])
+
 
 
 
@@ -108,5 +126,6 @@ texts_keys = {
     "Pipeline-Apps Creators": app_creators,
     "Front-End Developers": fe_dev,
     "CLI": cli,
-    "Data Registry": data_registry
+    "Data Registry": data_registry,
+    "Pipeline": pipeline
 }
