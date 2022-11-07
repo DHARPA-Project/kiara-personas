@@ -90,6 +90,15 @@ cli = html.Div(children=[
     dbc.CardImg(src="static/images/cli_3.png", top=True),
 ])
 
+data_registry = html.Div(children=[
+    html.P("The data registry enables to store data locally. It is architectured to capture information rich metadata, such as lineage."),
+    html.Br(),
+    html.Br(),
+    dbc.CardImg(src="static/images/data_registry.png", top=True),
+])
+
+
+
 
 texts_keys = {
     "Kiara": kiara,
@@ -98,5 +107,6 @@ texts_keys = {
     "Modules Pipelines Creators": modules_creators,
     "Pipeline-Apps Creators": app_creators,
     "Front-End Developers": fe_dev,
-    "CLI": cli
+    "CLI": cli,
+    "Data Registry": data_registry
 }
