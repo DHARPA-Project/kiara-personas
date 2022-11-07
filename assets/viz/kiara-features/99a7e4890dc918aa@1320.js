@@ -14,7 +14,7 @@ function _dx(){return(
 )}
 
 function _dy(){return(
-160
+180
 )}
 
 function _tree(d3,dx,dy){return(
@@ -29,7 +29,7 @@ function _graph(tree,d3,width,dx,treeLink,$0){return(
 function graph(root, {
   label = d => d.data.id, 
   highlight = () => false,
-  marginLeft = 120
+  marginLeft = 130
 } = {}) {
   root = tree(root);
 
