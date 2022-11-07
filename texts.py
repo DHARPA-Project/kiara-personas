@@ -81,6 +81,15 @@ fe_dev = html.Div(children=[
     dbc.CardImg(src="static/images/fe_dev.png", top=True),
 ])
 
+cli = html.Div(children=[
+    html.P("Operations can be performed via the command line, such as viewing the available modules and pipelines, and running them."),
+    html.Br(),
+    html.Br(),
+    dbc.CardImg(src="static/images/cli_2.png", top=True),
+    html.Br(),
+    dbc.CardImg(src="static/images/cli_3.png", top=True),
+])
+
 
 texts_keys = {
     "Kiara": kiara,
@@ -89,4 +98,5 @@ texts_keys = {
     "Modules Pipelines Creators": modules_creators,
     "Pipeline-Apps Creators": app_creators,
     "Front-End Developers": fe_dev,
+    "CLI": cli
 }
