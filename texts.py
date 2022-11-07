@@ -91,7 +91,7 @@ cli = html.Div(children=[
 ])
 
 data_registry = html.Div(children=[
-    html.P("The data registry enables to store data locally. It is architectured to capture information rich metadata, such as lineage."),
+    html.P("The data registry enables to store data locally. It is architectured to capture information-rich metadata, such as lineage information."),
     html.Br(),
     html.Br(),
     dbc.CardImg(src="static/images/data_registry.png", top=True),
@@ -104,7 +104,7 @@ pipeline = html.Div(children=[
     html.Br(),
     dbc.ListGroup(
     [
-    dbc.ListGroupItem('"Kiara Python API": https://github.com/DHARPA-Project/kiara.examples/blob/main/examples/pipelines/topic_modeling/topic_modeling.yaml"'),
+    dbc.ListGroupItem('"Example": https://github.com/DHARPA-Project/kiara.examples/blob/main/examples/pipelines/topic_modeling/topic_modeling.yaml'),
     ], flush=True
     ),
     html.Br(),
@@ -115,7 +115,32 @@ pipeline = html.Div(children=[
     dbc.CardImg(src="static/images/pipeline_2.png", top=True),
 ])
 
+plugin = html.Div(children=[
+    html.P("A kiara plugin is a template that provides module creators with a template to add their own modules. Modules template structure is designed to facilitate the documentation by modules creators."),
+    html.Br(),
+    dbc.ListGroup(
+    [
+    dbc.ListGroupItem('"Kiara Plugin Template": https://github.com/DHARPA-Project/kiara_plugin.develop'),
+    ], flush=True
+    ),
+    html.Br(),
+    html.Br(),
+    dbc.CardImg(src="static/images/plugin.png", top=True),
+])
 
+python_api = html.Div(children=[
+    html.P("The Python API provides methods to use Kiara outside the command-line interface, with Python code."),
+    html.Br(),
+    dbc.ListGroup(
+    [
+    dbc.ListGroupItem('"Documentation": https://dharpa.org/kiara/latest/reference/kiara/interfaces/python_api/__init__/', href="https://dharpa.org/kiara/latest/reference/kiara/interfaces/python_api/__init__/"),
+    dbc.ListGroupItem('"Example": https://github.com/DHARPA-Project/kiara_plugin.anom_processing/blob/develop/examples/jupyter/preprocessing_prep.ipynb', href='https://github.com/DHARPA-Project/kiara_plugin.anom_processing/blob/develop/examples/jupyter/preprocessing_prep.ipynb'),
+    ], flush=True
+    ),
+    html.Br(),
+    html.Br(),
+    dbc.CardImg(src="static/images/python_api.png", top=True),
+])
 
 
 texts_keys = {
@@ -126,6 +151,8 @@ texts_keys = {
     "Pipeline-Apps Creators": app_creators,
     "Front-End Developers": fe_dev,
     "CLI": cli,
-    "Data Registry": data_registry,
-    "Pipeline": pipeline
+    "Data registry": data_registry,
+    "Pipeline": pipeline,
+    "Plugin": plugin,
+    "Python API": python_api,
 }
