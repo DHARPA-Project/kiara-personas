@@ -104,7 +104,7 @@ pipeline = html.Div(children=[
     html.Br(),
     dbc.ListGroup(
     [
-    dbc.ListGroupItem('"Example": https://github.com/DHARPA-Project/kiara.examples/blob/main/examples/pipelines/topic_modeling/topic_modeling.yaml'),
+    dbc.ListGroupItem('"Example": https://github.com/DHARPA-Project/kiara.examples/blob/main/examples/pipelines/topic_modeling/topic_modeling.yaml', href='https://github.com/DHARPA-Project/kiara.examples/blob/main/examples/pipelines/topic_modeling/topic_modeling.yaml'),
     ], flush=True
     ),
     html.Br(),
@@ -120,7 +120,7 @@ plugin = html.Div(children=[
     html.Br(),
     dbc.ListGroup(
     [
-    dbc.ListGroupItem('"Kiara Plugin Template": https://github.com/DHARPA-Project/kiara_plugin.develop'),
+    dbc.ListGroupItem('"Kiara Plugin Template": https://github.com/DHARPA-Project/kiara_plugin.develop', href='https://github.com/DHARPA-Project/kiara_plugin.develop'),
     ], flush=True
     ),
     html.Br(),
@@ -140,6 +140,20 @@ python_api = html.Div(children=[
     html.Br(),
     html.Br(),
     dbc.CardImg(src="static/images/python_api.png", top=True),
+])
+
+workflow_object = html.Div(children=[
+    html.P("The workflow object enables front-end developers to experiment with Kiara's session storage that is under development. It provides a way to retrieve information such as the history of inputs or the status of a workflow."),
+    html.Br(),
+    dbc.ListGroup(
+    [
+    dbc.ListGroupItem('"Documentation": https://dharpa.org/kiara.documentation/latest/workflows/', href="https://dharpa.org/kiara.documentation/latest/workflows/"),
+    dbc.ListGroupItem('"Example": https://dharpa.org/kiara.documentation/latest/workflows/topic_modeling/', href='https://dharpa.org/kiara.documentation/latest/workflows/topic_modeling/'),
+    ], flush=True
+    ),
+    html.Br(),
+    html.Br(),
+    dbc.CardImg(src="static/images/workflow_object.png", top=True),
 ])
 
 
