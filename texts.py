@@ -15,7 +15,7 @@ kiara = html.Div(children=[
 ])
 
 modules_users = html.Div(children=[
-    html.P("Modules users are Kiara users who may not be comfortable with coding, but who are able to use the command line. They can access Kiara functionalities via the command-line interface, create pipelines with existing Kiara modules, and store processed data in the data registry."),
+    html.P("Modules users are Kiara users who may not be comfortable with coding, but who are able to use the command-line. They can access Kiara functionalities via the command-line interface, create pipelines with existing Kiara modules, and store processed data in the data registry."),
         html.Br(),
     html.H5("Tutorials",className="mb-1"),
     html.Br(),
@@ -82,7 +82,7 @@ fe_dev = html.Div(children=[
 ])
 
 cli = html.Div(children=[
-    html.P("Operations can be performed via the command line, such as viewing the available modules and pipelines, and running them."),
+    html.P("Operations can be performed via the command-line, such as viewing available modules and pipelines, and running them."),
     html.Br(),
     html.Br(),
     dbc.CardImg(src="static/images/cli_2.png", top=True),
@@ -94,7 +94,7 @@ data_registry = html.Div(children=[
     html.P("The data registry enables to store data locally. It is architectured to capture information-rich metadata, such as lineage information."),
     html.Br(),
     html.Br(),
-    dbc.CardImg(src="static/images/data_registry.png", top=True),
+    dbc.CardImg(src="static/images/cli_lineage.png", top=True),
 ])
 
 pipeline = html.Div(children=[
@@ -176,5 +176,6 @@ texts_keys = {
     "Pipeline": pipeline,
     "Plugin": plugin,
     "Python API": python_api,
+    "Workflow object": workflow_object,
     "Rest API": rest_api
 }
